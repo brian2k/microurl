@@ -18,7 +18,7 @@ $dbname
 - Validates URL (must contain 'http://' and no spaces etc.) with filter_var()
 - Changes Background based on the amount of images in 'bg' folder
 
-#### Coming soon
+### Coming soon
 - Responsive Design for mobile
 - Auto-Copy-to-Clipboard
 - Delete URL after a certain time (JS based, since some have shared servers)
