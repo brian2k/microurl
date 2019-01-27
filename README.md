@@ -3,9 +3,9 @@ URL shortener in PHP
 
 
 ### Requires config.php with:
-$servername
-$username
-$password
+$servername<br>
+$username<br>
+$password<br>
 $dbname
 
 
