@@ -1,0 +1,128 @@
+@import url("https://use.typekit.net/gie7xcf.css");
+
+body{
+  background: url(bg/bg_1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
+  
+  font-family: multi-display;
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(circle, rgba(255,255,255,.2), rgba(255,255,255,.6));
+    margin: 0px;
+}
+
+.welcome,.form,.messages{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;    
+}
+
+.welcome{
+    height: 40%;
+    padding-bottom: 20px;
+    color: #fff;
+    font-size: 60pt;
+    font-weight: 700;
+}
+
+.messages{
+    color: #fff;
+    font-size: 18pt;
+    font-weight: 400;
+}
+
+.stats{
+    font-size: 16px;
+}
+
+.form{
+    height: 10%;
+}
+
+input, button{
+    height: 50px;
+    border: none;
+    margin: 0px;    
+    border-image-outset: 0px;
+    margin-left: -4px;    
+}
+
+.url{
+    width: 400px;
+    padding: 10px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+button{
+    width: 150px;
+    background-color: #006699;
+    color: #fff;
+    font-weight: 400;
+    display: table-cell;
+    border-radius: 0px 4px 4px 0px;
+}
+
+button:hover{
+    background-color: #004073;
+    cursor: pointer;
+}
+
+a{
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #006699;
+}
+
+a:hover{
+/*    font-style: italic;*/
+}
+
+.visible-xs{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    input{
+      height: 120px;      
+      font-size: 26px;
+      text-align: center;
+    }
+    
+    .url{
+       width: 650px;
+       padding: 20px;
+    }
+    
+    button{
+        width: 650px;
+        height: 100px;
+        font-size: 36px;
+    }
+    
+    .messages{
+        padding-top: 50px;
+        font-size: 36px; 
+    }      
+    
+    .form{
+        height: 15%;
+    }
+    
+    .hidden-xs{
+        display: none !important;
+    }
+    
+    .visible-xs{
+        display: block !important;
+    }
+}
