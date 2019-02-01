@@ -94,8 +94,10 @@ a:hover{
 /* TABLETS */
 
 @media screen and (min-width:1023px){
-	.welcome{ height: 15%;}	
-.messages{
+	.welcome{
+		height: 15%;
+	}
+	.messages{
 		width: 100%;
 		margin-left: 15%;
 		margin-right: 15%;
@@ -107,12 +109,12 @@ a:hover{
 		margin-left: 15%;
 		margin-right: 15%;
 	}
-	
+
 	input, button{
 		width: 100%;
-		border-radius: 0px 0px 6px 6px;	
+		border-radius: 0px 0px 4px 4px;
 }
-	
+
 	.stats{
 		font-size: 36px;
 	}
@@ -122,7 +124,7 @@ a:hover{
 
 @media screen and (max-width: 768px) {
     
-	.welcome{;
+	.welcome{
 		height: 35%;
 	}
 
@@ -138,7 +140,7 @@ a:hover{
 	width: 100%;
       font-size: 26px;
       text-align: center;
-	border-radius: 6px 6px 0px 0px;
+	border-radius: 4px 4px 0px 0px;
     }
     
     .url{
@@ -148,15 +150,16 @@ a:hover{
     
     button{
       	font-size: 36px;
+	border-radius: 0px 0px 4px 4px;
     }
     
     .messages{
         padding-top: 10px;
-        font-size: 36px; 
-    }      
+        font-size: 36px;
+    }
 
 	.stats{
-		font-size:36px;	
+		font-size:36px;
 	}
 
     .form{
