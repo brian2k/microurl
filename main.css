@@ -93,7 +93,7 @@ a:hover{
 
 /* TABLETS */
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1025px){
 	.welcome{ height: 15%;}	
 .messages{
 		width: 100%;
