@@ -91,10 +91,50 @@ a:hover{
     display: none;
 }
 
+/* TABLETS */
+
+@media screen and (max-width:1024px){
+	.welcome{ height: 15%;}	
+.messages{
+		width: 100%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+
+	form{
+		height: 15%;
+		width: 100%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	
+	input, button{
+		width: 100%;
+	}
+	
+	.stats{
+		font-size: 36px;
+	}
+}
+
+/* SMARTPHONE */
+
 @media screen and (max-width: 1000px) {
     
-    input{
-      height: 120px;      
+	.welcome{;
+		height: 35%;
+	}
+
+	form{
+		height: 25%;
+		width: 100%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+
+    input, button{
+      height: 80px;
+	width: 100%;
       font-size: 26px;
       text-align: center;
     }
@@ -105,16 +145,18 @@ a:hover{
     }
     
     button{
-        width: 650px;
-        height: 100px;
-        font-size: 36px;
+      	font-size: 36px;
     }
     
     .messages{
-        padding-top: 50px;
+        padding-top: 10px;
         font-size: 36px; 
     }      
-    
+
+	.stats{
+		font-size:36px;	
+	}
+
     .form{
         height: 15%;
     }
