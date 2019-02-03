@@ -1,14 +1,15 @@
 @import url("https://use.typekit.net/gie7xcf.css");
 
+
+/* ============================= DESKTOP ====== */
+
 body{
-/*  background: url(bg/bg_1.jpg) no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-/*  background-size: cover;*/
   padding: 0px;
   margin: 0px;
-  
+
   font-family: multi-display;
 }
 
@@ -19,29 +20,24 @@ body{
     margin: 0px;
 }
 
-.welcome,.form,.messages{
+.welcome,.form, .messages{
     display: flex;
     justify-content: center;
     align-items: flex-end;    
+    overflow: hidden;
 }
 
 .welcome{
-    height: 40%;
-    padding-bottom: 20px;
+    height: 50%;
     text-shadow: 4px 4px 10px rgba(50,50,50,.5);
     color: #fff;
     font-size: 60pt;
     font-weight: 700;
 }
 
-.messages{
-    color: #fff;
-    font-size: 18pt;
-    font-weight: 400;
-}
-
-.stats{
-    font-size: 16px;
+.form form{
+    width: 100%;
+    text-align: center;
 }
 
 .form{
@@ -54,12 +50,6 @@ input, button{
     margin: 0px;    
     border-image-outset: 0px;
     margin-left: -4px;    
-}
-
-.url{
-    width: 400px;
-    padding: 10px;
-    border-radius: 4px 0px 0px 4px;
 }
 
 button{
@@ -76,6 +66,55 @@ button:hover{
     cursor: pointer;
 }
 
+.messages{
+    padding: 0 15% 0 15%;
+}
+
+.messages, .stats{
+    color: #fff;
+    font-size: 18pt;
+    font-weight: 400;
+    text-shadow: 4px 4px 10px rgba(50,50,50,.5);
+}
+
+.messages{
+    justify-content: center;
+    word-break: break-all;
+}
+
+.stats{
+    color: #000;
+    text-shadow: 4px 4px 10px rgba(255,255,255,.5);
+    font-size: 16px;    
+    padding: 30px;
+    background-color: rgba(255,255,255,.8);   
+    border-radius: 4px;
+
+}
+
+.subs, .caption{
+    font-weight: 500;    
+    margin:20px 0px 15px 0px;
+}
+
+.caption{
+    color: #006699;
+    margin: 0px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.url{
+    width: 400px;
+    padding: 10px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.maxi_url{
+    font-size: 14px;
+    font-style: italic;
+}
+
 a{
     font-weight: 400;
     font-style: normal;
@@ -83,94 +122,134 @@ a{
     color: #006699;
 }
 
-a:hover{
-/*    font-style: italic;*/
-}
-
 .visible-xs{
     display: none;
 }
 
-/* TABLETS */
 
-@media screen and (min-width:1023px){
-	.welcome{
-		height: 15%;
-	}
-	.messages{
-		width: 100%;
-		margin-left: 15%;
-		margin-right: 15%;
-	}
 
-	form{
-		height: 15%;
-		width: 100%;
-		margin-left: 15%;
-		margin-right: 15%;
-	}
 
-	input, button{
-		width: 100%;
-		border-radius: 0px 0px 4px 4px;
-}
+/* ================================================== */
+/* ============================= MEDIA QUERIES ====== */
+/* ================================================== */
 
-	.stats{
-		font-size: 36px;
-	}
-}
-
-/* SMARTPHONE */
-
-@media screen and (max-width: 768px) {
-    
-	.welcome{
-		height: 35%;
-	}
-
-	form{
-		height: 25%;
-		width: 100%;
-		margin-left: 15%;
-		margin-right: 15%;
-	}
-
-    input, button{
-      height: 80px;
-	width: 100%;
+/* =============================  SMARTPHONES PORTRAIT ====== */
+@media only screen and (min-device-width : 412px) and (max-device-width: 761px){
+        
+    input{
+      height: 100px;      
       font-size: 26px;
-      text-align: center;
-	border-radius: 4px 4px 0px 0px;
-    }
-    
-    .url{
-       width: 650px;
-       padding: 20px;
-    }
-    
-    button{
-      	font-size: 36px;
-	border-radius: 0px 0px 4px 4px;
-    }
-    
-    .messages{
-        padding-top: 10px;
-        font-size: 36px;
+      text-align: center;      
     }
 
-	.stats{
-		font-size:36px;
-	}
-
+    .welcome{
+        height: 45%;
+    }
+    
     .form{
         height: 15%;
     }
+    
+    button{
+        width: 70%;
+        height: 100px;
+        font-size: 36px;
+        border-radius: 0px 0px 6px 6px; 
+    }
+    
+    .messages, .stats{
+        font-size: 36px; 
+        justify-content: left;
+    }      
+    
+    .url{
+       width: 70%;
+       padding: 20px;
+       margin: 0px;
+       border-radius: 6px 6px 0px 0px;       
+    }     
+    .maxi_url{
+        font-size: 24px;
+    }   
     
     .hidden-xs{
         display: none !important;
     }
     
     .visible-xs{
-        display: block !important;
+        display: block !important;        
     }
+    
+    .visible-xs button{
+        margin: 0px;
+    }
+}
+
+/* ============================= TABLETS ====== */
+@media only screen and (min-device-width : 767px) and (max-device-width: 1023px) and (orientation: portrait){
+    .welcome{
+        height: 45%;
+    }
+    .form{
+        height: 100px;
+    }
+}
+
+@media only screen and (min-device-width : 1024px) and (max-device-width: 1349px){
+    .welcome{
+        height: 40%;
+        font-size: 42px;
+    }
+
+    input, button{
+        
+        height: 40px;
+    }    
+    
+    .messages{
+        font-size: 14px;
+    }
+    
+    .caption{
+        font-size: 22px;
+    }
+    
+    .stats{
+        font-size: 12px;
+    }
+}
+
+
+/* ============================= SMARTPHONES LANDSCAPE ====== */
+@media only screen and (min-device-width : 641px) and (max-device-width : 767px) and (orientation:landscape){
+    
+    .welcome{
+        height: 20%;
+        font-size: 36px;
+    }
+    
+    .form{
+        height: 110px;
+    }
+    
+    input, button{
+        
+        height: 80px;
+    }
+    
+    .form input{
+        width: 10%;
+    }
+    
+    button{
+        width: 30%;
+    }
+    
+    .hidden-xs{
+        display: inline-block !important;               
+    }
+    
+    .visible-xs{
+        display: none !important;        
+    }    
 }
