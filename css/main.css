@@ -26,33 +26,34 @@ body{
     align-items: flex-end;    
     overflow: hidden;
 }
-
 .welcome{
     height: 50%;
     text-shadow: 4px 4px 10px rgba(50,50,50,.5);
     color: #fff;
-    font-size: 60pt;
+    font-size: 34pt;
     font-weight: 700;
 }
 
 .form form{
+    justify-content: center;
     width: 100%;
+    margin: 0px 5%;
     text-align: center;
 }
 
-.form{
-    height: 10%;
+form{
+    display: flex;
 }
 
 input, button{
-    height: 50px;
+    height: 45px;
     border: none;
     margin: 0px;    
-    border-image-outset: 0px;
     margin-left: -4px;    
 }
 
 button{
+    padding: 20px;
     width: 150px;
     background-color: #006699;
     color: #fff;
@@ -80,27 +81,38 @@ button:hover{
 .messages{
     justify-content: center;
     word-break: break-all;
+    margin-top: 20px;
 }
 
 .stats{
     color: #000;
     text-shadow: 4px 4px 10px rgba(255,255,255,.5);
-    font-size: 16px;    
-    padding: 30px;
+    font-size: 14px;    
+    padding: 20px;
     background-color: rgba(255,255,255,.8);   
     border-radius: 4px;
+}
+.stats .clicks{
+    margin-bottom: 0px;
+}
 
+.stats.error_messages{
+    text-align: center;
+}
+
+.date{
+    font-size: 12px;
 }
 
 .subs, .caption{
     font-weight: 500;    
-    margin:20px 0px 15px 0px;
+    margin: 15px 0px 0px 0px;
 }
 
 .caption{
     color: #006699;
     margin: 0px;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
 }
 
@@ -113,6 +125,7 @@ button:hover{
 .maxi_url{
     font-size: 14px;
     font-style: italic;
+    margin: 0px;
 }
 
 a{
@@ -134,42 +147,61 @@ a{
 /* ================================================== */
 
 /* =============================  SMARTPHONES PORTRAIT ====== */
-@media only screen and (min-device-width : 412px) and (max-device-width: 761px){
+@media only screen and (min-device-width : 412px) and (max-device-width: 732px){
         
     input{
-      height: 100px;      
-      font-size: 26px;
-      text-align: center;      
+
     }
 
     .welcome{
         height: 45%;
     }
     
-    .form{
-        height: 15%;
+    .form{        
+        /*height: 25%;*/
+        align-items: flex-start;            
     }
     
-    button{
-        width: 70%;
+    .url, button{
         height: 100px;
         font-size: 36px;
-        border-radius: 0px 0px 6px 6px; 
+        border-radius: 0px 6px 6px 0px; 
+    }   
+    
+    button{
+        width: 300px;
     }
     
     .messages, .stats{
-        font-size: 36px; 
+        font-size: 28px; 
         justify-content: left;
     }      
     
-    .url{
-       width: 70%;
-       padding: 20px;
-       margin: 0px;
-       border-radius: 6px 6px 0px 0px;       
-    }     
-    .maxi_url{
+    .stats{
+        border-radius: 6px;
+        width: 100%;    
+    }
+    
+    .caption{
+        font-size:36px;
+    }
+    
+    .date{
         font-size: 24px;
+    }
+    
+    .url{
+        width: 70%;
+        height: 100px;      
+        font-size: 36px;
+        text-align: center;              
+        padding: 20px;
+        margin: 0px;
+        border-radius: 6px 6px 0px 0px;       
+    }   
+    
+    .maxi_url{
+        font-size: 34px;
     }   
     
     .hidden-xs{
@@ -185,14 +217,68 @@ a{
     }
 }
 
+/* ============================= SMARTPHONES LANDSCAPE ====== */
+@media only screen and (min-device-width : 732px) and (max-device-width : 767px) and (orientation:landscape){
+    
+    .welcome{
+        height: 20%;
+        font-size: 36px;
+    }
+    
+    .url, button{
+        display: inline-block;
+        font-size: 24px;
+        height: 80px;
+    }
+    
+    .url{
+        width: 100%;        
+        border-radius: 6px 0px 0px 6px;
+    }
+    
+    button{
+        width: 220px;
+        padding: 5px;        
+        border-radius: 0px 6px 6px 0px;
+
+    }
+    
+    .stats{
+        width: 100%;       
+    }
+    
+    .stats a{
+        font-size: 22px;
+    }
+    
+    .hidden-xs{
+        display: inline-block !important;               
+    }
+    
+    .visible-xs{
+        display: none !important;        
+    }    
+}
+
 /* ============================= TABLETS ====== */
 @media only screen and (min-device-width : 767px) and (max-device-width: 1023px) and (orientation: portrait){
     .welcome{
         height: 45%;
     }
     .form{
-        height: 100px;
+        /*height: 100px;*/
     }
+
+    input, button{
+        padding: 10px;    
+        font-size: 16px;
+        height: 50px;
+    }        
+    
+    .stats{
+        font-size: 18px;
+    }
+    
 }
 
 @media only screen and (min-device-width : 1024px) and (max-device-width: 1349px){
@@ -202,7 +288,7 @@ a{
     }
 
     input, button{
-        
+        padding: 5px;    
         height: 40px;
     }    
     
@@ -219,37 +305,3 @@ a{
     }
 }
 
-
-/* ============================= SMARTPHONES LANDSCAPE ====== */
-@media only screen and (min-device-width : 641px) and (max-device-width : 767px) and (orientation:landscape){
-    
-    .welcome{
-        height: 20%;
-        font-size: 36px;
-    }
-    
-    .form{
-        height: 110px;
-    }
-    
-    input, button{
-        
-        height: 80px;
-    }
-    
-    .form input{
-        width: 10%;
-    }
-    
-    button{
-        width: 30%;
-    }
-    
-    .hidden-xs{
-        display: inline-block !important;               
-    }
-    
-    .visible-xs{
-        display: none !important;        
-    }    
-}

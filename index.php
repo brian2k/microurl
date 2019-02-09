@@ -10,7 +10,9 @@ $pure_url = explode('?', $actual_link);
 $maxi_url = filter_input(INPUT_POST, 'url');
 $micro_url = filteR_input(INPUT_GET,'u');
 
-// GENERATE RANDOM NUMBER FOR BACKGROUND-IMAGE
+
+// ====================== GENERATE RANDOM NUMBER FOR BACKGROUND-IMAGE
+// ============================================================================================ unabhängig vom dateinamen machen
 $count_files = count(scandir('bg')) - 3;
 $rand_image = rand(0,$count_files);
 
@@ -79,19 +81,19 @@ if($micro_url  && substr($actual_link, -1) != '-'){
             if ($result->num_rows > 0) {
                 
                 
-            echo "<span class='stats'><p class='caption'>statistics:</p>" 
-                . date("d.m.Y H:i:s",strtotime($row['date']));
+            echo "<span class='stats'><p class='caption'>statistics:</p>"
             
-                echo "<p class='subs'>your URL from:</p><p class='maxi_url'>" . $row['maxi_url'] . "</p>";
+                . "<p class='subs'>URL:</p><p class='maxi_url'>" . $row['maxi_url'] . "</p>"
+                . "<p class='date'>created: " . date("d.m.Y H:i:s",strtotime($row['date'])) . "</p>";
             
-                echo "<p class='subs'>shortcode:</p><a href='" . $pure_url[0] . "?u=" . $row['micro_url'] . "'>" . $pure_url[0] . "?u=" . $row['micro_url'] . "</a>";
+                echo "<p class='subs'>micromized:</p><a href='" . $pure_url[0] . "?u=" . $row['micro_url'] . "'>" . $pure_url[0] . "?u=" . $row['micro_url'] . "</a>";
 
-                if(!(int) $row['count']){
-                    echo "<p class='subs'>Sorry! No clicks yet..</p></span>";
-                }
-                else{
-                    echo "<p class='subs'>" . (int) $row['count'] .  " clicks</p></span>";
-                }
+//                if(!(int) $row['count']){
+//                    echo "<p>Sorry! No clicks yet..</p></span>";
+//                }
+//                else{
+                    echo "<p class='clicks'>" . (int) $row['count'] .  " clicks</p></span>";
+//                }
             }        
         }
 
@@ -119,7 +121,7 @@ if($micro_url  && substr($actual_link, -1) != '-'){
                         $sql = "INSERT INTO microURL (maxi_url, micro_url) VALUES ('" . $maxi_url . "', '" . $micro_url . "')";
 
                         if ($conn->query($sql) === TRUE) {
-                            echo "<span>your URL:&nbsp;<a href='" . $pure_url[0] . "?u=" . $micro_url . "' class'micro_url'>" . $pure_url[0] . "?u=" . $micro_url . "</a></span>";
+                            echo "<span class='stats'>micromized:&nbsp;<a href='" . $pure_url[0] . "?u=" . $micro_url . "' class'micro_url'>" . $pure_url[0] . "?u=" . $micro_url . "</a></span>";
                         } else {
                             echo "error: " . $conn->error;
                         }
@@ -128,7 +130,7 @@ if($micro_url  && substr($actual_link, -1) != '-'){
                     }
                 }
                 else{
-                    echo "no valid url";
+                    echo "<span class='stats error_message'>no valid url</span>";
                 }
 
             }
